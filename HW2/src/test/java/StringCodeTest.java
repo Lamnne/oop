@@ -83,6 +83,26 @@ public class StringCodeTest {
 		assertEquals(3, StringCode.maxRun("1112233"));
 	}
 
-	// Need test cases for stringIntersect
-	
+    @Test
+    public void testStringIntersect_BasicCases() {
+        assertEquals(true, StringCode.stringIntersect("abc", "cde", 1));
+        assertEquals(true, StringCode.stringIntersect("abcdef", "xyzbcd", 3));
+    }
+
+    @Test
+    public void testStringIntersect_NoIntersection() {
+        assertEquals(false, StringCode.stringIntersect("abc", "def", 1));
+        assertEquals(false, StringCode.stringIntersect("abcdef", "xyzuvw", 2));
+    }
+
+    @Test
+    public void testStringIntersect_ExactMatch() {
+        assertEquals(true, StringCode.stringIntersect("hello", "hello", 5));
+    }
+
+    @Test
+    public void testStringIntersect_SpecialCases() {
+        assertEquals(false, StringCode.stringIntersect("a", "b", 1));
+        assertEquals(true, StringCode.stringIntersect("a", "a", 1));
+    }
 }

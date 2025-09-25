@@ -65,11 +65,11 @@ public class StringCode {
             return false;
         }
         HashSet<String> set = new HashSet<>();
-        for (int i = 0; i < a.length() - len; i++) {
+        for (int i = 0; i <= a.length() - len; i++) {
             String sub = a.substring(i, i + len);
             set.add(sub);
         }
-        for (int i = 0; i < b.length() - len; i++) {
+        for (int i = 0; i <= b.length() - len; i++) {
             String sub = b.substring(i, i + len);
             if (set.contains(sub)) {
                 return true;
